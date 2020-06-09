@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<fdmmaterial xmlns="http://www.ultimaker.com/material" version="1.3">
+	<metadata>
+		<name>
+			<brand>BigRep</brand>
+			<material>Pro HT</material>
+			<color>Black</color>
+		</name>
+		<GUID>4c2b46c1-496a-4259-bc1b-540310f36ac4</GUID>
+		<version>9</version>
+		<color_code>#303030</color_code>
+		<description></description>
+		<adhesion_info></adhesion_info>
+	</metadata>
+	<properties>
+		<density>1.3</density>
+		<diameter>2.85</diameter>
+	</properties>
+	<settings>
+		<setting key="print temperature">200</setting>
+		<setting key="heated bed temperature">55</setting>
+		<setting key="standby temperature">170</setting>
+		<setting key="adhesion tendency">0</setting>
+		<setting key="surface energy">100</setting>
+		<setting key="support angle">60</setting>
+		<setting key="print cooling">50</setting>
+		<setting key="adhesion type">brim</setting>
+		<machine>
+			<machine_identifier manufacturer="BigRep" product="BigRep ONEv3"></machine_identifier>
+			<hotend id="Standard Extruder 1 mm">
+				<setting key="hardware compatible">yes</setting>
+				<setting key="material status">external</setting>
+				<setting key="max material feedrate">3.33</setting>
+				<setting key="retraction amount">2</setting>
+				<setting key="retraction retraction speed">40</setting>
+				<setting key="retraction prime speed">20</setting>
+				<setting key="support infill rate">15</setting>
+				<setting key="support interface desity">50</setting>
+			</hotend>
+			<hotend id="Power Extruder 0.6 mm">
+				<setting key="hardware compatible">yes</setting>
+				<setting key="material status">external</setting>
+				<setting key="max material feedrate">2.91</setting>
+				<setting key="retraction amount">2</setting>
+				<setting key="retraction retraction speed">40</setting>
+				<setting key="retraction prime speed">20</setting>
+				<setting key="support infill rate">15</setting>
+				<setting key="support interface desity">50</setting>
+			</hotend>
+			<hotend id="Power Extruder 1 mm">
+				<setting key="hardware compatible">yes</setting>
+				<setting key="material status">external</setting>
+				<setting key="max material feedrate">4.58</setting>
+				<setting key="retraction amount">2.5</setting>
+				<setting key="retraction retraction speed">40</setting>
+				<setting key="retraction prime speed">20</setting>
+				<setting key="support infill rate">15</setting>
+				<setting key="support interface desity">50</setting>
+			</hotend>
+			<hotend id="Power Extruder 2 mm">
+				<setting key="hardware compatible">yes</setting>
+				<setting key="material status">external</setting>
+				<setting key="max material feedrate">7.5</setting>
+				<setting key="print temperature">210</setting>
+				<setting key="retraction amount">7.25</setting>
+				<setting key="retraction retraction speed">30</setting>
+				<setting key="retraction prime speed">20</setting>
+				<setting key="support infill rate">15</setting>
+				<setting key="support interface desity">20</setting>
+			</hotend>
+		</machine>
+		<machine>
+			<machine_identifier manufacturer="BigRep" product="BigRep STUDIO"></machine_identifier>
+			<setting key="hardware compatible">yes</setting>
+			<setting key="material status">external</setting>
+			<setting key="max material feedrate">2.58</setting>
+			<setting key="retraction amount">2</setting>
+			<setting key="retraction retraction speed">40</setting>
+			<setting key="retraction prime speed">20</setting>
+			<setting key="support infill rate">15</setting>
+			<setting key="support interface desity">50</setting>
+		</machine>
+		<machine>
+			<machine_identifier manufacturer="BigRep" product="BigRep STUDIO G2"></machine_identifier>
+			<hotend id="0.6 mm">
+				<setting key="hardware compatible">yes</setting>
+				<setting key="material status">external</setting>
+				<setting key="max material feedrate">2.58</setting>
+				<setting key="retraction amount">2</setting>
+				<setting key="retraction retraction speed">40</setting>
+				<setting key="retraction prime speed">20</setting>
+				<setting key="support infill rate">15</setting>
+				<setting key="support interface desity">50</setting>
+			</hotend>
+		</machine>
+		<machine>
+			<machine_identifier manufacturer="BigRep" product="BigRep PRO"></machine_identifier>
+			<hotend id="MXT 1 mm">
+				<setting key="hardware compatible">no</setting>
+				<setting key="material status">none</setting>
+			</hotend>
+			<hotend id="ACE 1 mm">
+				<setting key="hardware compatible">yes</setting>
+				<setting key="material status">external</setting>
+				<setting key="print temperature">210</setting>
+				<setting key="max material feedrate">4.58</setting>
+				<setting key="retraction amount">2.5</setting>
+				<setting key="retraction retraction speed">40</setting>
+				<setting key="retraction prime speed">20</setting>
+				<setting key="support infill rate">15</setting>
+				<setting key="support interface desity">50</setting>
+			</hotend>
+		</machine>
+		<machine>
+			<machine_identifier manufacturer="BigRep" product="bigrep_pro_1_1"></machine_identifier>
+			<hotend id="MXT 1 mm">
+				<setting key="hardware compatible">no</setting>
+				<setting key="material status">none</setting>
+			</hotend>
+			<hotend id="ACE 1 mm">
+				<setting key="hardware compatible">no</setting>
+				<setting key="material status">internal</setting>
+				<setting key="print temperature">210</setting>
+				<setting key="max material feedrate">4.58</setting>
+				<setting key="retraction amount">2.5</setting>
+				<setting key="retraction retraction speed">40</setting>
+				<setting key="retraction prime speed">20</setting>
+				<setting key="support infill rate">15</setting>
+				<setting key="support interface desity">50</setting>
+			</hotend>
+		</machine>
+		<machine>
+			<machine_identifier manufacturer="BigRep" product="bigrep_pro_1_2"></machine_identifier>
+			<hotend id="MXT 1 mm">
+				<setting key="hardware compatible">no</setting>
+				<setting key="material status">none</setting>
+			</hotend>
+			<hotend id="ACE 1 mm">
+				<setting key="hardware compatible">no</setting>
+				<setting key="material status">internal</setting>
+				<setting key="print temperature">210</setting>
+				<setting key="max material feedrate">4.58</setting>
+				<setting key="retraction amount">2.5</setting>
+				<setting key="retraction retraction speed">40</setting>
+				<setting key="retraction prime speed">20</setting>
+				<setting key="support infill rate">15</setting>
+				<setting key="support interface desity">50</setting>
+			</hotend>
+		</machine>
+	</settings>
+</fdmmaterial>

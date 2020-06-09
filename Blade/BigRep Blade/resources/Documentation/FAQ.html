@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Blade - FAQ</title>
+
+	<!-- Bootstrap -->
+	<link href="css/bootstrap-4.3.1.css" rel="stylesheet">
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+		integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+	<style>
+		.accordion .card-header:after {
+			font-family: 'FontAwesome';
+			content: "\f068";
+			float: right;
+		}
+
+		.accordion .card-header.collapsed:after {
+			/* symbol for "collapsed" panels */
+			content: "\f067";
+		}
+	</style>
+
+</head>
+
+<body>
+	<div class="jumbotron jumbotron-fluid text-center">
+
+		<img src="images/BigRep-Logo-300x90.png" class="img-fluid" alt="Responsive image">
+		<h3 style="margin-top: 0.5em">BigRep Blade - FAQ </h3>
+		<br>
+		<p class="lead">
+			<a class="btn btn-primary btn-lg" role="button" href="https://bigrep.com/blade">Learn more</a>
+		</p>
+	</div>
+	<div class="container">
+		<div id="accordion" class="accordion">
+			<div class="card mb-0">
+				<div class="card-header collapsed" data-toggle="collapse" href="#collapseZeroZero">
+					<a class="card-title">
+						Requirements/First Steps
+					</a>
+				</div>
+				<div id="collapseZeroZero" class="card-body collapse" data-parent="#accordion">
+					<p>
+						<h2>Requirements</h2>
+						<ul>
+							<li>Windows 10</li>
+							<li>Memory: 8GB or more</li>
+							<li>CPU: intel core i5 or better</li>
+							<li>GPU: dedicated graphics card recommended, but works on integrated as well</li>
+						</ul>
+						<h2>First Steps</h2>
+						Blade is heavily based on Ultimaker Cura. In particular, you will get quite far by the ordinary
+						Cura documentation: <a class="external-link"
+							href="https://ultimaker.com/en/resources/51945-first-use-ultimaker-cura"
+							rel="nofollow">https://ultimaker.com/en/resources/51945-first-use-ultimaker-cura</a>
+
+						The following sections point out what are the differences and the explicit features of Blade in
+						contrast to Cura.
+					</p>
+				</div>
+				<div class="card-header collapsed" data-toggle="collapse" href="#collapseZero">
+					<a class="card-title">
+						Intended Use
+					</a>
+				</div>
+				<div id="collapseZero" class="card-body collapse" data-parent="#accordion">
+					<p>
+						The user may do:
+						<ul>
+							<li>Load geometries and manipulate them in preparation for printing</li>
+							<li>Use preinstalled extensions for manipulating the model and the toolpath output</li>
+							<li>Select setting presets for materials and printer for printing</li>
+							<li>Change settings (basic/advanced/expert)</li>
+							<li>Create gcode file and use it to print on a BigRep printer</li>
+						</ul>
+						The user may not do:
+						<ul>
+							<li>Customize Blade in a significant way, i.e.
+								<ul>
+									<li>adjust any Blade files (files in the install directory or in the appdata
+										directory)</li>
+									<li>change machine settings (printer/extruder settings)</li>
+									<li>add own printers</li>
+									<li>add own materials</li>
+								</ul>
+							</li>
+							<li>Use experimental settings.</li>
+							<li>Disable post processing.</li>
+							<li>Install plugins or materials from the Ultimaker Marketplace</li>
+						</ul>
+					</p>
+				</div>
+				<div class="card-header collapsed" data-toggle="collapse" href="#collapseOne">
+					<a class="card-title">
+						Basic Settings Overview
+					</a>
+				</div>
+				<div id="collapseOne" class="card-body collapse" data-parent="#accordion">
+					<p>If you hold the cursor over a setting you get a description of the setting and its effect.
+
+						<strong>Quality Presets:</strong>
+						<ul>
+							<li>"Quality" will result in a slower print, but gives a higher overall print quality.</li>
+							<li>"Medium" is faster than "Quality" and was known as "Speed" in previous Simplify3D
+								Factory Files.</li>
+						</ul>
+						More presets might be added over time.
+
+						<strong>Z Seam Alignment:</strong>
+						<ul>
+							<li>Here you can chose where Blade is placing the retraction points.</li>
+							<li>With standard settings, Blade will work to place retraction points at less visible
+								positions. This is suitable for most geometries. However, in some rare cases you have to
+								do manual adjustments.</li>
+							<li>If you switch to "User Specified" you can choose a a X-Y coordinates as in Simplify3D.
+								If you also check "Z Seam Relative" the position is relative the center of the model.
+							</li>
+						</ul>
+						<strong>Gradual Infill:</strong>
+						<ul>
+							<li>This change the amount of infill gradually.</li>
+							<li>This produces a lower infill in the main body and higher infill closer to the surface of
+								the part.</li>
+							<li>This reduces the printing time and amount of material needed.</li>
+						</ul>
+					</p>
+				</div>
+				<div class="card-header collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+					<a class="card-title">
+						Blade Workflows
+					</a>
+				</div>
+				<div id="collapseTwo" class="card-body collapse" data-parent="#accordion">
+					<p>
+						The extruder setup in Blade should be the same as on the machine. If there is more than one
+						physical machine, then there shall be for each physical machine a virtual representative in
+						Blade.
+
+						For example it is possible to add two ONEs with different extruder setups. These will be saved
+						locally on the user's computer and can not be easily transferred to another computer.
+
+						Extruders can be enabled and disabled by right clicking on the extruder in the main menu.
+
+						This is important as there are some setting that change if one or both extruders are enabled .
+						If two extruders are enabled, Blade assumes that the user wants to perform dual extrusion.
+
+						So if only T1 (Extruder 2) is used, T0 (Extruder 1) should be disabled and the other way round.
+					</p>
+				</div>
+				<div class="card-header collapsed" data-toggle="collapse" data-parent="#accordion"
+					href="#collapseThree">
+					<a class="card-title">
+						How to add a printer
+					</a>
+				</div>
+				<div id="collapseThree" class="collapse" data-parent="#accordion">
+					<div class="card-body">
+						<p>
+							When Blade is opened for the first time you are asked to add a printer. Additional printers
+							can be added later
+							<ul>
+								<li>Click on Printer Selection the top right corner and then on "Add Printer..."</li>
+							</ul>
+							<p style="text-align: center">
+								<img class="img-fluid center" src="images/image2019-9-9_10-1-38.png" alt="" width="422"
+									height="371" /> </p>
+							<ul>
+								<li>You can also click on "Settings" in the menu bar and then on "Printer", "Add
+									Printer..."</li>
+								<li>In the following menu you can add a printer and also change its name:</li>
+							</ul>
+							<p style="text-align: center">
+								<img class="img-fluid center" src="images/image2019-9-9_10-7-17.png" alt="" width="586"
+									height="465" /> </p>
+						</p>
+
+					</div>
+				</div>
+				<div class="card-header collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
+					<a class="card-title">
+						How to use Dual Extrusion
+					</a>
+				</div>
+				<div id="collapseFour" class="collapse" data-parent="#accordion">
+					<div class="card-body">
+						<p>
+							Both extruders must be enabled.
+							<h2>Dual extrusion with two or more models</h2>
+							<ul>
+								<li>Each model can be mapped to one of the extruders.</li>
+							</ul>
+							<p style="text-align: center"><img class="aligncenter wp-image-15640 size-full"
+									src="images/image2019-9-9_9-38-39.png" alt="" width="724" height="515" /></p>
+
+							<h2 id="HowtouseDualExtrusion-Dualextrusionwithadifferentsupportextruder">Dual extrusion
+								with a different support extruder</h2>
+							<ul>
+								<li>Make sure you have the right material mapped to the correct extruder.</li>
+								<li>Also the model(s) should be connected to the extruder which is not used for support.
+								</li>
+								<li>Then the "Support Extruder" need to be changed to the other extruder.</li>
+							</ul>
+							<p style="text-align: center"><img class="aligncenter wp-image-15645 size-full"
+									src="images/image2019-9-9_9-54-48.png" alt="" width="421" height="448" /></p>
+							<h2 id="HowtouseDualExtrusion-PrimeToweradjustments">Prime Tower adjustments</h2>
+							<ul>
+								<li>Independent of how the dual extrusion is used, the prime tower should be adjusted.
+								</li>
+								<li>Dependent of the height of the model, also the size of the tower needs to be
+									adjusted to ensure it's stability and preventing it falling over.</li>
+								<li>To avoid oozing, the tower should be placed as near as possible to the model.</li>
+							</ul>
+							<p style="text-align: center"><img src="images/dualextrusion_primetower.png" alt=""
+									width="1024" height="664" /></p>
+						</p>
+
+					</div>
+				</div>
+				<div class="card-header collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFive">
+					<a class="card-title">
+						How to use Mixed Mode/Batch Printing
+					</a>
+				</div>
+				<div id="collapseFive" class="collapse" data-parent="#accordion">
+					<div class="card-body">
+						<p>
+							<h2>All at Once</h2>
+							<h3>What it does</h3>
+							All models will be printed at the same time. Called Layer-by-Layer in Simplify3D.
+
+							This means that the printer will print one layer of each model and than move to the next
+							layer, and so on.
+							<h3>Why it should be used</h3>
+							All at Once is the default (if both extruders are enabled) and easier to use than "Mixed
+							Mode".
+
+							In particular, this configuration is safe and you can print any scenario without taking care
+							about safety distances.
+
+							How to use "All at Once"
+
+							If the second extruder is enabled, "All at Once" is the only possible mode. In particular,
+							you cannot change it.
+							Otherwise, you can change the mode in "Special Modes/Print Sequence".
+
+							Good to know:
+							<ul>
+								<li>"All at Once" is the default value if both extruders are enabled. Otherwise, "Mixed"
+									is the default.</li>
+								<li>It is easier to use than Mixed mode.</li>
+								<li>A disadvantage is the following: In case of a printer failure, all prints will be
+									lost.</li>
+								<li>Printing results might be different for each model because the relative motions are
+									different.</li>
+								<li>Printing time might be higher because of more travel moves.</li>
+							</ul>
+
+							<hr />
+
+							<h2>Mixed/Batch Printing</h2>
+							<h3>What it does</h3>
+							Mixed printing mode replaces the standard Cura "One at a Time". Together with "Mixed" we
+							offer the batch printing plugin (Menu→Extensions→Batch Printing) to get the full out if this
+							mode.
+
+							To use the full potential of the print bed and still uses the advantage to print model by
+							model the mixed mode combines layer by layer printing with model by model.
+
+							But instead of printing each model separate it uses row and columns to make the print safer.
+
+							Depending on the used printer the behavior is slightly different. The ONE and PRO starts at
+							the front of the printer, while the STUDIO and STUDIO G2 start from the right.
+							<h3>Why it should be used</h3>
+							Mixed mode is more complex to use than "All at Once".
+
+							The benefit is that the models will be printed as they would be printed alone. Whenever a
+							model is finished it can't be effected by a printer failure.
+							<h3>How to use Mixed mode</h3>
+							"Mixed" will be automatically enabled when you disable the second extruder.
+							You can alter the mode via "Print Sequence/Special Modes".
+
+							As already mentioned, the Mixed mode will do most of the work and chose the right mode
+							depending on how the models are placed on the print bed. Placing can then be done via the
+							batch printing extension automatically.
+							<h4>Print different models in one print:</h4>
+							<ul>
+								<li>Import all models</li>
+								<li>If needed, alter settings for specific models by "Per Model Settings"</li>
+								<li>If several models form a single part, group them together</li>
+								<li>Call "Menu→Extensions→Arrange objects for mixed mode"</li>
+							</ul>
+							<p style="text-align: center"><img class="size-medium wp-image-16041 aligncenter"
+									src="images/image2019-11-14_14-4-52-300x242.png" alt="" width="300" height="242" />
+							</p>
+							<h4>Print a single model multiple times in one print:</h4>
+							<ul>
+								<li>Import the model (you can also import several models and group them together)</li>
+								<li>Call "Menu→Extensions→Populate build plate completely" for having the maximum number
+									of copies.
+									(Alternatively, you can call "Menu→Extensions→Populate build plate for sequential
+									printing" for just populating the rows.
+									Or with right click on the model and "Multiply Selected Model" you can create a
+									specific number of models and then call "Menu→Extensions→Arrange objects for mixed
+									mode")</li>
+							</ul>
+							<p style="text-align: center"><img src="images/image2019-11-14_14-37-20-300x249.png" alt=""
+									width="300" height="249" /></p>
+
+							<p>
+								Good to know:
+								<ul>
+									<li>Always check if the order is correct in the preview.</li>
+									<li>You can also use "Per Model Settings" for each model.</li>
+									<li>You can group or merge several models to one "part".</li>
+								</ul>
+							</p>
+						</p>
+
+					</div>
+				</div>
+				<div class="card-header collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSix">
+					<a class="card-title">
+						How to use Tandem Mode on the ONE
+					</a>
+				</div>
+				<div id="collapseSix" class="collapse" data-parent="#accordion">
+					<div class="card-body">
+						<p>
+							You need to disable "Extruder 1" to be able to activate the "Tandem Mode".
+							Than you can activate "Enable Tandem Mode" which is a "Special Modes" setting.
+
+							Important: The build plate will only be refreshed when a model is imported.
+						</p>
+
+					</div>
+				</div>
+				<div class="card-header collapsed" data-toggle="collapse" data-parent="#accordion"
+					href="#collapseSeven">
+					<a class="card-title">
+						How to add custom profiles/materials
+					</a>
+				</div>
+				<div id="collapseSeven" class="collapse" data-parent="#accordion">
+					<div class="card-body">
+						<p>
+							<h2>Custom Profiles</h2>
+
+							A custom profile saves changes to the current default settings.
+
+							A star next to the name of the profile indicates changed settings. You can save these
+							changes into your own profile. Also the current layer height, from the current profile will
+							be saved in this new profile, but can also be changed afterwards.
+							<p style="text-align: center">
+								<img class="img-fluid center" src="images/image2020-1-14_11-17-28.png" alt="" />
+								<img class="img-fluid center" src="images/image2020-1-14_11-18-34.png" alt="" />
+							</p>
+							After the profile is saved, you can find it under the default profiles. You can also update
+							your custom profile with additional changed settings.
+							<p style="text-align: center">
+								<img class="img-fluid center" src="images/image2020-1-14_11-23-45.png" alt="" /> </p>
+							If you go "Manage Profiles" you can also see the changes you made. There are global and
+							specific extruder settings.
+							<br>
+							These profiles are only available in your added machine and thus for all extruders and
+							materials.
+							<br>
+							Profiles can also be exported and imported.
+							<hr />
+
+
+							<h2>Custom Materials</h2>
+
+							If you want to add your own none BigRep material, you can do so by going to the manage
+							material page (Material → Manage Materials...)
+							<br>
+							This window shows the generic materials on which the BigRep materials are based on. You can
+							duplicate one of these files or create a new one. It is recommended to duplicate the
+							material if you have one which is basically the same as one of our materials (a different
+							kind of PLA for example). Please be aware that when you copy a material you also copy all
+							settings. Some materials are not compatible to all extruders, this can not be changed!
+							<p style="text-align: center">
+								<img class="img-fluid center" src="images/image2020-1-14_13-15-1.png" alt="" /> </p>
+							<br>
+							When you have created your own material you can change some settings, like the displayed
+							name or brand, but also color, density (which is used for calculating the used material) and
+							filament diameter (which is mostly 2.85 mm and used for calculating the right amount of
+							extruded material).
+							<p style="text-align: center">
+								<img class="img-fluid center" src="images/image2020-1-14_13-16-19.png" alt="" /> </p>
+							<br>
+							The current displayed print settings are the ones for the currently selected extruder and
+							can be changed for each extruder separately (you have to close the window, change the
+							extruder and than going back again, same for printers). Only a few material related settings
+							can be changed here. If you want to change more settings you have to create a custom profile
+							(see above).
+							<p style="text-align: center">
+								<img class="img-fluid center" src="images/image2020-1-14_13-16-45.png" alt="" /> </p>
+							Please take a look on other materials for recommendations about settings.
+							<br>
+							One important setting, different from the Ultimaker Cura setup, is the "Max
+							Extruder/Material Feedrate". This setting is used for calculating the maximum possible
+							printing speed for a certain layer height in combination with the line width. This value
+							states at which speed the extruder can move filament (not the Y/X movment) before it starts
+							to underextrude. You can get this value for your material by extruding the material at
+							different speeds and see when you reach about 95% of the actual length you wanted to
+							extrude. (Be aware that F values in gcodes are in mm/min, while this value is in mm/s).
+							Depending on the material, the real value for printing might be lower than the value you got
+							from the flow tests.
+						</p>
+
+					</div>
+				</div>
+				<div class="card-header collapsed" data-toggle="collapse" data-parent="#accordion"
+					href="#collapseEight">
+					<a class="card-title">
+						Support Blockers
+					</a>
+				</div>
+				<div id="collapseEight" class="collapse" data-parent="#accordion">
+					<div class="card-body">
+						<p>
+							<h2>What it does</h2>
+							<p>Support Blockers prevent support within their volume.</p>
+							<h2 id="HowtoManipulateSupport-Whyitshouldbeused">Why it should be used</h2>
+							<p>Usually, support is placed on all surfaces with an angle higher than the support angle
+								(overhang).</p>
+							<p>Sometimes this is not necessary and should be blocked, for example:</p>
+							<ul>
+								<li>Usually, small horizontal holes don't need support and it can be hard to remove
+									support there.</li>
+								<li>Small surfaces that could be printed with bridging.</li>
+								<li>Inside a model, where it can't be removed.</li>
+							</ul>
+							<h2 id="HowtoManipulateSupport-HowtouseSupportBlocker">How to use Support Blocker</h2>
+							<p>Firstly, it is necessary to load/import a model. When the model is active in the toolbar
+								on the left the following icon can be selected.</p>
+							<p><img class="alignnone wp-image-17326"
+									src="images/SupportEraser.png" alt=""
+									width="73" height="73"
+									srcset="images/SupportEraser.png 250w, images/SupportEraser-150x150.png 150w"
+									sizes="(max-width: 73px) 100vw, 73px" /></p>
+							<p><img class="alignnone wp-image-17296"
+									src="images/image2019-3-7_10-1-34-300x222.png"
+									alt="" width="370" height="274"
+									srcset="images/image2019-3-7_10-1-34-300x222.png 300w, images/image2019-3-7_10-1-34-768x569.png 768w, images/image2019-3-7_10-1-34.png 874w"
+									sizes="(max-width: 370px) 100vw, 370px" /> <img class="alignnone wp-image-17301"
+									src="images/image2019-3-7_10-2-31-300x182.png"
+									alt="" width="448" height="272"
+									srcset="images/image2019-3-7_10-2-31-300x182.png 300w, images/image2019-3-7_10-2-31-768x466.png 768w, images/image2019-3-7_10-2-31.png 875w"
+									sizes="(max-width: 448px) 100vw, 448px" /></p>
+							<p> </p>
+							<p>Good to know:</p>
+							<ul>
+								<li>Red surfaces on the model indicate an area where support will be placed.</li>
+								<li>The Support Blockers can only be placed on a surface of the model.</li>
+								<li>Each cube can be transformed/moved/scale as a normal model.</li>
+								<li>To Block the support the red surface must be within the cube/Support Blocker.</li>
+								<li>Support Blocker and Custom Support can be placed in the same model.</li>
+							</ul>
+							<hr />
+							<h1>Custom Support</h1>
+							<h2 id="HowtoManipulateSupport-Whatitdoes.1">What it does</h2>
+							<p>Custom Support places support where it would not be placed by default.</p>
+							<h2 id="HowtoManipulateSupport-Whyitshouldbeused.1">Why it should be used</h2>
+							<p>Usually, all surfaces which have a lower angle than the support angle will have no
+								support.</p>
+							<p>Sometimes it's necessary to place more support, for example:</p>
+							<ul>
+								<li>Ensure that small area support are sufficiently strong, especially if the piece is
+									tall.</li>
+								<li>Stabilize a model to make sure it doesn't fall over.</li>
+							</ul>
+							<h2 id="HowtoManipulateSupport-HowtouseCustomSupport">How to use Custom Support</h2>
+							<p>Firstly, it is necessary to load/import a model. When the model is active, the user can
+								select in the toolbar on the left the following icon:</p>
+							<p><img class="alignnone wp-image-17331"
+									src="images/CustomSupport.png" alt=""
+									width="74" height="74"
+									srcset="images/CustomSupport.png 250w, images/CustomSupport-150x150.png 150w"
+									sizes="(max-width: 74px) 100vw, 74px" /></p>
+							<p><img class="alignnone wp-image-17311"
+									src="images/image2019-3-7_10-5-56-1-300x180.png"
+									alt="" width="419" height="251"
+									srcset="images/image2019-3-7_10-5-56-1-300x180.png 300w, images/image2019-3-7_10-5-56-1-1024x614.png 1024w, images/image2019-3-7_10-5-56-1-768x460.png 768w, images/image2019-3-7_10-5-56-1.png 1101w"
+									sizes="(max-width: 419px) 100vw, 419px" /> <img class="alignnone wp-image-17321"
+									src="images/image2019-3-7_10-6-48-1-300x201.png"
+									alt="" width="375" height="251"
+									srcset="images/image2019-3-7_10-6-48-1-300x201.png 300w, images/image2019-3-7_10-6-48-1-768x514.png 768w, images/image2019-3-7_10-6-48-1.png 1000w"
+									sizes="(max-width: 375px) 100vw, 375px" /></p>
+							<p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"> </span>
+							</p>
+							<p>Good to know:</p>
+							<ul>
+								<li>Red surfaces on the model indicate areas where support will be placed.</li>
+								<li>Custom Support can only be placed on the surface of the model.</li>
+								<li>Each cube can be transformed and moved like a normal model.</li>
+								<li>The support will be generated everywhere below up to the inside (upper surface) of
+									the cube/Custom Support.</li>
+								<li>Support will be always placed even when the support is deactivated.</li>
+								<li>Support Blocker and Custom Support can be placed in the same model.</li>
+							</ul>
+						</p>
+
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	</div>
+	</div>
+	</div>
+	<br>
+	<hr>
+	<div class="row">S
+		<div class="text-center col-lg-6 offset-lg-3">
+			<img src="images/BigRep-Logo-90.png" class="img-fluid" alt="Responsive image">
+			<p>Copyright &copy; 2020 &middot; All Rights Reserved &middot; <a href="https://bigrep.com">Bigrep</a></p>
+		</div>
+	</div>
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="js/jquery-3.3.1.min.js"></script>
+
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="js/popper.min.js"></script>
+	<script src="js/bootstrap-4.3.1.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,133 @@
+{
+    "id": "bigrep_pro",
+    "version": 2,
+    "name": "BigRep PRO",
+    "inherits": "fffprinter",
+    "metadata": {
+        "visible": true,
+        "author": "BigRep",
+        "manufacturer": "BigRep",
+        "category": "BigRep",
+        "file_formats": "text/x-gcode",
+        "platform": "bigrep_pro.stl",
+        "has_materials": true,
+        "has_machine_materials": true,
+        "has_machine_quality": true,
+        "has_variants": true,
+        "has_variant_materials": true,
+        "variants_name": "Extruder Type",
+		"preferred_variant_name": "MXT 1 mm",
+		"preferred_quality_type": "Quality",
+		"preferred_material": "bigrep_pa666_black",
+		"exclude_materials": ["generic_pro_ht_plus", "bigrep_pro_ht_plus_silver", "bigrep_pro_ht_plus_nature", "bigrep_pro_ht_plus_black"],
+        "machine_extruder_trains":
+        {
+            "0": "bigrep_pro_extruder_0",
+			"1": "bigrep_pro_extruder_1"
+        }
+    },
+    "overrides": {
+        "machine_extruder_count": {"default_value": 2},
+        "machine_name": { "default_value": "BigRep PRO" },
+        "machine_start_gcode": { "default_value": "" },
+        "machine_end_gcode": { "default_value": "" },
+        "machine_width": { "default_value": 980 },
+        "machine_height": { "default_value": 950 },
+        "machine_depth": { "default_value": 945 },
+        "machine_depth_prefered_start_point": { "default_value": 200 },
+        "machine_width_prefered_start_point": { "default_value": 200 },
+        "machine_center_is_zero": { "default_value": false },
+        "machine_heated_bed": { "default_value": true },		
+        "machine_max_feedrate_x": { "default_value": 300 },
+        "machine_max_feedrate_y": { "default_value": 300 },
+        "machine_max_feedrate_z": { "default_value": 20 },
+        "machine_max_acceleration_x": { "default_value": 2000 },
+		"machine_max_acceleration_y": { "default_value": 2000 },
+		"machine_max_acceleration_z": { "default_value": 400 },
+        "machine_acceleration": { "default_value": 400 },
+		"machine_max_jerk_xy": { "default_value": 10 },
+        "machine_max_jerk_z": { "default_value": 2 },
+        
+        "machine_head_with_fans_polygon":
+        {
+            "default_value":
+            [
+                [
+                    -5,
+                    35
+                ],
+                [
+                    5,
+                    35
+                ],
+                [
+                    5,
+                    -35
+                ],
+                [
+                    -5,
+                    -35
+                ]
+            ]
+        },
+
+        "br_tandem_enable": { "enabled": false },
+
+        "layer_height": {
+            "enabled": false
+        },
+        "layer_height_0":
+			{
+                "default_value": 0.6,
+				"value": "0.6 if layer_height <= 0.6 else layer_height",
+                "minimum_value": "0.5",
+                "minimum_value_warning": "0.5"
+            },
+        "top_bottom_pattern": { "default_value": "zigzag" },
+        "infill_pattern": { "default_value": "zigzag" },
+        "infill_overlap": { "value": "5 if infill_sparse_density < 95 and infill_pattern != 'concentric' else 0" },
+        "skin_overlap": { "value": "0 if top_bottom_pattern != 'concentric' else 0" },
+
+		"wall_line_count": { "value": "1 if magic_spiralize else 2 if machine_nozzle_size == 0.6 else 2 if machine_nozzle_size == 1 else 1"},
+		"top_thickness": { "value": "2 if machine_nozzle_size == 0.6 else 2.4 if machine_nozzle_size == 1 else 3" },
+		"bottom_thickness": { "value": "top_thickness - layer_height" },
+        
+        "retract_at_layer_change": { "default_value": true },
+        
+        "relative_extrusion":
+        {
+            "default_value": true,
+            "enabled": false
+        },
+        
+        "br_visual_quality_speed": { "default_value": 20 },
+        "br_non_visual_quality_speed": { "default_value": 60 },
+        "br_visual_medium_speed": { "default_value": 35 },
+        "br_non_visual_medium_speed": { "default_value": 75 },
+        "br_visual_speed_speed": { "default_value": 50 },
+        "br_non_visual_speed_speed": { "default_value": 100 },
+        
+		"br_quality_mode":
+        {
+            "options":
+            {
+                "quality": "Quality",
+                "medium": "Medium"
+            },
+            "default_value": "quality",
+            "enabled": false
+        },
+        
+        "br_feeder_k0": { "enabled": false },
+        "br_feeder_k1": { "enabled": false },
+        "br_feeder_k2": { "enabled": false },
+        "br_pump_k0": { "enabled": false },
+        "br_pump_k1": { "enabled": false },
+        "br_pump_k2": { "enabled": false },
+        "br_pump_stb": { "enabled": false },
+        "br_timings_pump": { "enabled": false },
+        "br_timings_xyz": { "enabled": false },
+        "br_timings_feeder": { "enabled": false }
+    }
+
+}

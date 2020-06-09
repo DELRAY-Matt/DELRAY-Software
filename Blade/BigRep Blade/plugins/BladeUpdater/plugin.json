@@ -1,0 +1,8 @@
+{
+    "name": "Blade Updater",
+    "author": "BigRep",
+    "version": "1.0.0",
+    "api": 5,
+    "description": "Loads old appdata files and update to newer version.",
+    "supported_sdk_versions": ["5.0.0", "6.0.0"]
+}

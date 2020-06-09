@@ -1,0 +1,117 @@
+{
+    "id": "bigrep_studio_g2",
+    "version": 2,
+    "name": "BigRep STUDIO G2",
+    "inherits": "fffprinter",
+    "metadata": {
+        "visible": true,
+        "author": "BigRep",
+        "manufacturer": "BigRep",
+        "category": "BigRep",
+        "file_formats": "text/x-gcode",
+        "platform": "bigrep_studio_g2.stl",
+        "has_materials": true,
+        "has_machine_materials": true,
+        "has_machine_quality": true,
+        "has_variants": true,
+        "has_variant_materials": true,
+        "variants_name": "Hotend",
+        "preferred_material": "bigrep_pla_white",
+        "preferred_variant_name": "0.6 mm",
+		"exclude_materials": [],
+        "machine_extruder_trains":
+        {
+            "0": "bigrep_studio_g2_extruder_0",
+			"1": "bigrep_studio_g2_extruder_1"
+        }
+    },
+    "overrides": {
+        "machine_extruder_count": {"default_value": 2},
+        "machine_name": { "default_value": "BigRep STUDIO G2" },
+        "machine_start_gcode": { "default_value": "M800\nG28" },
+        "machine_end_gcode": { "default_value": "G92 E0\nG1 E-5.0000 F1800\nG91\nG1 Z10 F4000\nG90\nT0\nG1 X5 F40000\nG1 Y5 F40000\nM104 S0 H0\nM104 S0 H1\nM107 P0\nM107 P1\nM140 S0\nM84\nM801" },
+        "machine_width": { "default_value": 1000 },
+        "machine_height": { "default_value": 500 },
+        "machine_depth": { "default_value": 500 },
+        "machine_depth_prefered_start_point": { "default_value": 100 },
+        "machine_width_prefered_start_point": { "default_value": 200 },
+        "machine_center_is_zero": { "default_value": false },
+        "machine_heated_bed": { "default_value": true },	
+        "machine_max_feedrate_x": { "default_value": 200 },
+        "machine_max_feedrate_y": { "default_value": 200 },
+        "machine_max_feedrate_z": { "default_value": 5 },
+        "machine_max_acceleration_x": { "default_value": 600 },
+		"machine_max_acceleration_y": { "default_value": 600 },
+		"machine_max_acceleration_z": { "default_value": 10 },
+        "machine_acceleration": { "default_value": 600 },		
+		"machine_max_jerk_xy": { "default_value": 8 },
+        "machine_max_jerk_z": { "default_value": 0.1 },
+        
+        "machine_head_with_fans_polygon":
+        {
+            "default_value":
+            [
+                [
+                    -40,
+                    5
+                ],
+                [
+                    40,
+                    5
+                ],
+                [
+                    40,
+                    -5
+                ],
+                [
+                    -40,
+                    -5
+                ]
+            ]
+        },
+
+        
+        "br_tandem_enable": { "enabled": false },
+        "retraction_combing": { "default_value": "infill" },
+        "infill_pattern": { "default_value": "zigzag" },
+        "top_bottom_pattern": { "default_value": "zigzag"},
+
+        "layer_height_0":
+			{
+                "default_value": 0.4,
+				"value": "0.4 if layer_height <= 0.4 else layer_height",
+                "minimum_value": "0.3",
+                "minimum_value_warning": "0.4"
+            },
+		"wall_line_count": { "value": "1 if magic_spiralize else 2"},
+		"top_thickness": { "default_value": 2 },
+		"bottom_thickness": { "value": "2 - layer_height" },
+
+        "infill_overlap": { "value": "5 if infill_sparse_density < 95 and infill_pattern != 'concentric' else 0" },
+		
+        "switch_extruder_retraction_amount": { "default_value": 20 },
+
+        "relative_extrusion":
+        {
+            "default_value": false,
+            "enabled": false
+        },
+        
+        "br_visual_quality_speed": { "default_value": 30 },
+        "br_non_visual_quality_speed": { "default_value": 60 },
+        "br_visual_medium_speed": { "default_value": 50 },
+        "br_non_visual_medium_speed": { "default_value": 75 },
+        "br_visual_speed_speed": { "default_value": 60 },
+        "br_non_visual_speed_speed": { "default_value": 100 },
+        
+        "br_quality_mode":
+        {
+            "options":
+            {
+                "quality": "Quality",
+                "medium": "Medium"
+            }   
+        }           
+    }
+
+}

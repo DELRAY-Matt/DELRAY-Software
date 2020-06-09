@@ -1,0 +1,7 @@
+{
+    "name": "Pro HMI Update Chekcer",
+    "author": "BigRep GmbH",
+    "version": "1.0.0",
+    "description": "Checks for BigRep HMI updates.",
+    "api": 5
+}

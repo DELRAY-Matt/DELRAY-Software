@@ -1,0 +1,102 @@
+[2.2.1]
+*Materials:
+- BigRep STUDIO G2: Added Materials PET-CF, ASA, ABS
+- BigRep STUDIO G2: Changed BVOH settings
+*BigRep PRO: Fixed wrong feeder settings which randomly occur
+*BigRep PRO: Removed Quality Preset setting
+*Disabled other languages apart from English
+
+[2.2.0]
+*Updated to CuraEngine 4.4
+*Make installer usable for Windows 7
+*Materials:
+- BigRep STUDIO G2: Added BVOH
+- BigRep STUDIO: Added PET
+*Profiles:
+- BigRep PRO: Added 0.3 mm layer height for MXT with PA6/66
+*Put CustomSupportPlugin back in
+*Adjust settings dependencies and limits
+*BigRep PRO: Revised and optimized build volume
+
+[2.1.0]  
+*Added splash screen
+
+*Batch Printing Plugin: Enhancments
+- Place first part in the front of the printer (not in the back which is the old behavior).
+- Added 90 degree rotation to optimize the "sequential" part. Can be disabled by "Batch Printing 90deg Rotation".
+
+*Added Mesh tool plugin: Split geometries and check geometries
+
+*Gcode
+- Added model information to gcode
+- Added weights to gcode
+
+*Added kapton marks to print bed of BigRep PRO and BigRep ONE.
+
+*Added FAQ and "Report a Bug" to menu
+
+*Materials:
+BigRep STUDIO: Added PLX
+
+*BigRep STUDIO/BigRep STUDIO G2:
+Changed combing mode to "Within Infill" and infill pattern to "ZigZag" to overcome shifting problems. This might cause slighty higher (up to 5%) print time and material usage.
+
+*Made Blade compatible with old computers.
+
+[2.0.0]	15 Nov 2019 	
+*First official release. Leaving the Beta phase.
+*Stability optimizations for prime towers
+*Changed internal paths to resolve Ultmikare Cura interferences
+*2mm Power Extruder Profile: TPU (various fixes)
+*Revised EULA and license agreements
+*BigRep Pro: Update to Firmware v1.5.
+This is breaking change. BigRep Pros with older firmware versions are not supported any more. 
+*Installer: Changed installation directory to "Program Files"
+*Removed "Marketplace" menu entry
+*Added BigRep BVOH to ACE as support material
+*Added BigRep PLX to ONE Power Extruder 1mm and STUDIO G2
+
+[1.6.0]	22 Oct 2019 	
+*Batch Printing Plugin/Mixed Mode
+Please try out: Menu- >Extensions - > “Batch Printing”
+*2mm Power Extruder Profile: PLA/Pro HT/PETG (various fixes)
+*Auto orientation:
+*Blade update notifications
+*BigRep PRO: Renamed PowerExtruder to ACE 
+This is a breaking change and old files may not work anymore!
+*BigRep PRO: Gcode preview
+*Minor UI changes/ Adjusted basic mode and introduced expert mode
+
+[1.5.0]	08 Aug 2019 	
+*Fixed: Print with second extruder only 
+*Fixed: Deal with non ASCII characters on ONE/STUDIO
+*Compatible with new BigRep Pro firmware
+*Adjustable flowrate
+*Updated: Dual Extrusion: Prime tower
+*Added: Export Machine and Extruder settings to gcode
+*Added: Tandem mode for ONE
+*Post Processing: Speed improvements
+*Optimized various settings
+
+[1.4.0]	08 May 2019 	
+*Optimized settings for BigRep Pro.
+*Removed non officially supported printers.
+
+[1.3.0]	12 Mar 2019 	
+*Update to Cura 3.6
+- https://ultimaker.com/en/products/ultimaker- cura- software/release- notes
+- In particular, we have 3d infill: gyroid.
+*Basic support of BigRep One 
+*All Extruders and Materials as in Simplify3D (No full support for PVA/TPU and 2mm PE)
+*Basic support of BigRep Studio 
+*All Materials as in Simplify3D (No full Support for PVA/TPU)
+*Preliminary support of BigRep Studio Plus
+
+[1.2.0]	25 Feb 2019 	
+*Renamed Bigz into BigRep Blade
+*BigRep Pro: Flow rate and print speed can be set independently from each other.
+*Support is officially supported.
+*Dual extrusion is officially supported.
+*Better seams.
+*Auto- Orientation and Custom- Support added.
+*Better housing for BigRep One.

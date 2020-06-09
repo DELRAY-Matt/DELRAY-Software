@@ -1,0 +1,41 @@
+{
+     "DataCollector": "Plugin Version",
+     "environment": {
+          "bladeBuildVersion": "Blade Build Number",
+          "bladeLanguage": "Blade Language",
+          "bladeVersion": "Blade Version",
+          "cores": "Number of physical cores",
+          "cpu": "CPU Name",
+          "date": "Current local date",
+          "day": "Current local day",
+          "gpu": "List of GPUs",
+          "localization": "Windows Language",
+          "memory": "RAM in GB",
+          "saveTo": "Where is gcode is saved (PC/USB)",
+          "system": "Operating System",
+          "systemVersion": "Version of OS",
+          "time": "Current local time",
+          "uuid": "UUID4 (generated based on time during first start)",
+          "vcores": "Number of virtual cores",
+          "week": "Current local week"
+     },
+     "model": [
+          {
+               "boundingBox": "X, Y, Z max/min dimension of the model",
+               "extruder": "Which extruder is printing the model",
+               "hash": "hash of the STL",
+               "meshCount": "How often the mesh is on the print bed",
+               "modelSettings": "Some model specific settings",
+               "transformation": "How the model is transformed"
+          }
+     ],
+     "slicing": {
+          "changedSettings": "List of changed settings by the user",
+          "extruders": "List of both extruder with extruder information, incuding settings and material",
+          "gcodeChecksum": "Hash of the gcode",
+          "machine": "Name of the used machine",
+          "printTimes": "Printing times per feature",
+          "qualityProfile": "Selected Profile",
+          "selectedPrintSettings": "Some global settings"
+     }
+}
